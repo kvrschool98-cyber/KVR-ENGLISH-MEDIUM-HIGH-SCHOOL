@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVR ENGLISH MEDIUM HIGH SCHOOL - Excellence in Education</title>
+    
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #2b2b2b;
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #f4b41a;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f4b41a;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(15, 32, 39, 0.75), rgba(15, 32, 39, 0.75)), 
+                        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            background-color: #f4b41a;
+            color: #0f2027;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(244, 180, 26, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #e0a000;
+            transform: translateY(-2px);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #0f2027;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Photo Gallery Grid */
+        .gallery-section {
+            padding: 60px 8%;
+            background-color: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: #203a43;
+            background-color: #f8f9fa;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 70px 8%;
+            background-color: #f0f4f8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-card h3 {
+            color: #203a43;
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 2px solid #f4b41a;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .info-item {
+            margin-bottom: 18px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #0f2027;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-item span, .info-item a {
+            color: #444444;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            color: #f4b41a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f2027;
+            color: #a0a0a0;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <h1>KVR EM HIGH SCHOOL</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <h2>Welcome to KVR ENGLISH MEDIUM HIGH SCHOOL</h2>
+        <p>Providing quality English medium education, character development, and academic excellence in Kurnool.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">School Photo Gallery</h2>
+        
+        <div class="gallery-grid">
+            
+            <!-- Photo Item 1 -->
+            <div class="gallery-card">
+                <img src="IMAGES/unnamed (1).webp" alt="School Image">
+                <div class="gallery-caption">School Building</div>
+            </div>
+
+            <!-- Photo Item 2 -->
+            <div class="gallery-card">
+                <img src="IMAGES/unnamed (2).webp" alt="School Activities">
+                <div class="gallery-caption">Classroom Activities</div>
+            </div>
+
+            <!-- Photo Item 3 -->
+            <div class="gallery-card">
+                <img src="IMAGES/unnamed.webp" alt="Campus View">
+                <div class="gallery-caption">Campus Grounds</div>
+            </div>
+
+            <!-- Photo Item 4 -->
+            <div class="gallery-card">
+                <img src="IMAGES/WhatsApp Image 2026-09-21 at 12.26.07 PM (1).jpeg" alt="School Event">
+                <div class="gallery-caption">Events & Celebrations</div>
+            </div>
+
+            <!-- Photo Item 5 -->
+            <div class="gallery-card">
+                <img src="IMAGES/WhatsApp Image 2026-09-21 at 12.26.07 PM.jpeg" alt="Students">
+                <div class="gallery-caption">Student Life</div>
+            </div>
+
+            <!-- Photo Item 6 -->
+            <div class="gallery-card">
+                <img src="IMAGES/WhatsApp Image 2026-09-21 at 12.26.08 PM (1).jpeg" alt="Facility">
+                <div class="gallery-caption">School Infrastructure</div>
+            </div>
+
+            <!-- Photo Item 7 -->
+            <div class="gallery-card">
+                <img src="IMAGES/WhatsApp Image 2026-09-21 at 12.26.08 PM (2).jpeg" alt="Facility">
+                <div class="gallery-caption">Sports & Games</div>
+            </div>
+
+            <!-- Photo Item 8 -->
+            <div class="gallery-card">
+                <img src="IMAGES/WhatsApp Image 2026-09-21 at 12.26.08 PM.jpeg" alt="Facility 2">
+                <div class="gallery-caption">Sports & Games</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Details Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact & Location</h2>
+        
+        <div class="contact-grid">
+            <!-- Phone Numbers Card -->
+            <div class="contact-card">
+                <h3>Phone Numbers</h3>
+                
+                <div class="info-item">
+                    <strong>Office Cell:</strong>
+                    <a href="tel:9133720590">91337 20590</a>
+                </div>
+
+                <div class="info-item">
+                    <strong>Correspondent Cell:</strong>
+                    <a href="tel:9393828207">93938 28207</a>
+                </div>
+            </div>
+
+            <!-- Address Card -->
+            <div class="contact-card">
+                <h3>School Address</h3>
+                
+                <div class="info-item">
+                    <strong>Institution:</strong>
+                    <span>KVR ENGLISH MEDIUM HIGH SCHOOL</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Address:</strong>
+                    <span>KVR Garden, Osmania College Road, Vaddegeri, Kurnool, Andhra Pradesh - 518001</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Email ID:</strong>
+                    <a href="mailto:kvrschool98@gmail.com">kvrschool98@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>KVR ENGLISH MEDIUM HIGH SCHOOL</strong>. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
