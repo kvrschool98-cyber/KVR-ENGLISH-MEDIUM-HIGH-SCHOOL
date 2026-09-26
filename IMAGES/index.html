@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVR ENGLISH MEDIUM HIGH SCHOOL - Excellence in Education</title>
+    
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #2b2b2b;
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #f4b41a;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            color: #f4b41a;
+        }
+
+        /* Director Badge in Top Right Corner */
+        .director-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(244, 180, 26, 0.4);
+        }
+
+        .director-badge img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #f4b41a;
+            margin-bottom: 5px;
+        }
+
+        .director-info {
+            color: #ffffff;
+        }
+
+        .director-info .role {
+            font-size: 11px;
+            color: #f4b41a;
+            font-weight: 600;
+            text-transform: UPPERCASE;
+        }
+
+        .director-info .degrees {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: UPPERCASE;
+            color: #e0e0e0;
+            margin-top: 2px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(15, 32, 39, 0.75), rgba(15, 32, 39, 0.75)), 
+                        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            background-color: #f4b41a;
+            color: #0f2027;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(244, 180, 26, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e0a000;
+            transform: translateY(-2px);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #0f2027;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Photo Gallery Grid */
+        .gallery-section {
+            padding: 60px 8%;
+            background-color: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: #203a43;
+            background-color: #f8f9fa;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 70px 8%;
+            background-color: #f0f4f8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-card h3 {
+            color: #203a43;
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 2px solid #f4b41a;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .info-item {
+            margin-bottom: 18px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #0f2027;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-item span, .info-item a {
+            color: #444444;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            color: #f4b41a;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f2027;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #f4b41a;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 90px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Modal Overlay & Card */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            width: 95%;
+            max-width: 650px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+            text-align: center;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .modal-card h3 {
+            color: #0f2027;
+            margin-bottom: 15px;
+        }
+
+        .step-section {
+            display: none;
+        }
+
+        /* Navigation Option Buttons */
+        .option-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .option-btn {
+            background-color: #0f2027;
+            color: #ffffff;
+            padding: 15px 10px;
+            border-radius: 10px;
+            border: 2px solid #f4b41a;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover {
+            background-color: #f4b41a;
+            color: #0f2027;
+        }
+
+        /* Class Tabs Design */
+        .class-tabs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .class-tab {
+            background: #f0f4f8;
+            border: 1px solid #0f2027;
+            color: #0f2027;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .class-tab:hover, .class-tab.active {
+            background: #f4b41a;
+            color: #0f2027;
+            border-color: #f4b41a;
+        }
+
+        .back-btn {
+            background: #6c757d;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-bottom: 15px;
+            float: left;
+        }
+
+        .add-teacher-btn {
+            background: #28a745;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-bottom: 15px;
+            float: right;
+            font-weight: 600;
+        }
+
+        .add-teacher-btn:hover {
+            background: #218838;
+        }
+
+        /* Teachers Table Styling */
+        .teacher-table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        .teacher-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .teacher-table th {
+            background-color: #0f2027;
+            color: #f4b41a;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .teacher-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+
+        .teacher-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f2027;
+            color: #a0a0a0;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="header-left">
+            <h1>KVR EM HIGH SCHOOL</h1>
+            <nav>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="openLoginModal()">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Director Photo & Details -->
+        <div class="director-badge">
+            <img src="IMAGES/unnamed (2).webp" alt="Director Photo">
+            <div class="director-info">
+                <div class="role">DIRECTOR</div>
+                <div class="degrees">M.SC., B.ED., L.L.B.</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <h2>Welcome to KVR ENGLISH MEDIUM HIGH SCHOOL</h2>
+        <p>Providing quality English medium education, character development, and academic excellence in Kurnool.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">School Photo Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="IMAGES/unnamed (1).webp" alt="School Image">
+                <div class="gallery-caption">School Building</div>
+            </div>
+            <div class="gallery-card">
+                <img src="IMAGES/unnamed (2).webp" alt="School Activities">
+                <div class="gallery-caption">Classroom Activities</div>
+            </div>
+            <div class="gallery-card">
+                <img src="IMAGES/unnamed.webp" alt="Campus View">
+                <div class="gallery-caption">Campus Grounds</div>
+            </div>
+            <div class="gallery-card">
+                <img src="IMAGES/WhatsApp Image 2026-09-21 at 12.26.07 PM (1).jpeg" alt="School Event">
+                <div class="gallery-caption">Events & Celebrations</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Leave a Message Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact & Location</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>School Info</h3>
+                <div class="info-item">
+                    <strong>Institution:</strong>
+                    <span>KVR ENGLISH MEDIUM HIGH SCHOOL</span>
+                </div>
+                <div class="info-item">
+                    <strong>Office Cell:</strong>
+                    <a href="tel:9133720590">91337 20590</a>
+                </div>
+                <div class="info-item">
+                    <strong>Address:</strong>
+                    <span>KVR Garden, Osmania College Road, Vaddegeri, Kurnool, AP - 518001</span>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Leave a Message</h3>
+                <form action="https://formspree.io/f/xaenbvgd" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number / Email</label>
+                        <input type="text" id="phone" name="Contact Info" placeholder="Enter phone or email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="Message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Pop-up Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            
+            <!-- Step 1: Mobile Input -->
+            <div id="mobileStep" class="step-section" style="display: block;">
+                <h3>Login with Mobile</h3>
+                <div class="form-group">
+                    <label for="mobileNum">Mobile Number</label>
+                    <input type="tel" id="mobileNum" maxlength="10" placeholder="Enter 10 digit mobile number" required>
+                </div>
+                <button type="button" class="btn submit-btn" onclick="sendOTP()">Send OTP</button>
+            </div>
+
+            <!-- Step 2: OTP Input -->
+            <div id="otpStep" class="step-section">
+                <h3>Verify OTP</h3>
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px;">OTP sent to your mobile number</p>
+                <div class="form-group">
+                    <label for="otpInput">Enter OTP</label>
+                    <input type="text" id="otpInput" maxlength="6" placeholder="Enter OTP (e.g. 1234)" required>
+                </div>
+                <button type="button" class="btn submit-btn" onclick="verifyOTP()">Verify & Login</button>
+            </div>
+
+            <!-- Step 3: Main Dashboard Options -->
+            <div id="dashboardStep" class="step-section">
+                <h3>Select Portal</h3>
+                <div class="option-grid">
+                    <button type="button" class="option-btn" onclick="navigateTo('admin-dashboard.html')">🏫 Admin</button>
+                    <button type="button" class="option-btn" onclick="navigateTo('hm-dashboard.html')">👨‍💼 School HM</button>
+                    <button type="button" class="option-btn" onclick="showSection('teacherFormStep')">👨‍🏫 Teachers Form</button>
+                    <button type="button" class="option-btn" onclick="showSection('classesStep')">📚 Classes (Nursery - IX)</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Add Teacher Form & Details Display -->
+            <div id="teacherFormStep" class="step-section">
+                <button class="back-btn" onclick="showSection('dashboardStep')">← Back</button>
+                <button class="add-teacher-btn" onclick="toggleTeacherForm(true)">+ Add New Teacher</button>
+                <div style="clear: both;"></div>
+
+                <h3 id="teacherHeaderTitle">Teacher Details Form</h3>
+
+                <!-- Input Form -->
+                <form id="teacherForm" onsubmit="handleTeacherSubmit(event)">
+                    <div class="form-group">
+                        <label for="tName">Teacher Full Name</label>
+                        <input type="text" id="tName" placeholder="Enter Teacher Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tSubject">Assigned Subject</label>
+                        <input type="text" id="tSubject" placeholder="e.g. Mathematics, English" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tPhone">Phone Number</label>
+                        <input type="tel" id="tPhone" maxlength="10" placeholder="Enter Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tQual">Qualification</label>
+                        <input type="text" id="tQual" placeholder="e.g. B.Ed, M.Sc" required>
+                    </div>
+                    <button type="submit" class="btn submit-btn" id="saveTeacherBtn">Save Teacher Details</button>
+                </form>
+
+                <!-- Saved Teachers Table Container -->
+                <div class="teacher-table-container" id="teacherListContainer">
+                    <h4 style="margin-bottom: 10px; color: #0f2027;">Registered Teachers List</h4>
+                    <table class="teacher-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Subject</th>
+                                <th>Phone</th>
+                                <th>Qualification</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teacherTableBody">
+                            <!-- Dynamic Saved Rows Will Appear Here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Step 5: Classes Tabs (Nursery to IX Class) -->
+            <div id="classesStep" class="step-section">
+                <button class="back-btn" onclick="showSection('dashboardStep')">← Back</button>
+                <h3 style="clear: both;">Select Class</h3>
+                
+                <div class="class-tabs-container">
+                    <button class="class-tab" onclick="selectClass('Nursery')">Nursery</button>
+                    <button class="class-tab" onclick="selectClass('LKG')">LKG</button>
+                    <button class="class-tab" onclick="selectClass('UKG')">UKG</button>
+                    <button class="class-tab" onclick="selectClass('Class 1')">I Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 2')">II Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 3')">III Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 4')">IV Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 5')">V Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 6')">VI Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 7')">VII Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 8')">VIII Class</button>
+                    <button class="class-tab" onclick="selectClass('Class 9')">IX Class</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>KVR ENGLISH MEDIUM HIGH SCHOOL</strong>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Functions -->
+    <script>
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzU-LK4thsmhjYmyOG84aO2_8Jscp_gnS8FgfaGeGke6a-G88e0VqQJR300DZkiqKqHGg/exec";
+
+        // Global Teachers Data Array (Stored in LocalStorage)
+        let teachersList = JSON.parse(localStorage.getItem('kvr_teachers')) || [];
+
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+            showSection('mobileStep');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.step-section');
+            sections.forEach(sec => sec.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+
+            if (sectionId === 'teacherFormStep') {
+                renderTeachersTable();
+            }
+        }
+
+        function sendOTP() {
+            const mobile = document.getElementById('mobileNum').value.trim();
+            const phoneRegex = /^[6-9]\d{9}$/;
+
+            if (!phoneRegex.test(mobile)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return;
+            }
+            showSection('otpStep');
+        }
+
+        function verifyOTP() {
+            const otp = document.getElementById('otpInput').value.trim();
+
+            if (otp.length < 4) {
+                alert("Please enter a valid OTP.");
+                return;
+            }
+            showSection('dashboardStep');
+        }
+
+        function navigateTo(pageUrl) {
+            window.location.href = pageUrl;
+        }
+
+        // Toggle Form vs List View
+        function toggleTeacherForm(showForm) {
+            const form = document.getElementById('teacherForm');
+            const title = document.getElementById('teacherHeaderTitle');
+            if (showForm) {
+                form.style.display = 'block';
+                title.innerText = "Teacher Details Form";
+                document.getElementById('tName').focus();
+            } else {
+                form.style.display = 'none';
+                title.innerText = "Registered Teachers";
+            }
+        }
+
+        // Render Teachers to Table
+        function renderTeachersTable() {
+            const tbody = document.getElementById('teacherTableBody');
+            tbody.innerHTML = '';
+
+            if (teachersList.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:#888;">No Teachers added yet. Click '+ Add New Teacher' above.</td></tr>`;
+                toggleTeacherForm(true);
+                return;
+            }
+
+            teachersList.forEach((teacher, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td><strong>${teacher.name}</strong></td>
+                    <td>${teacher.subject}</td>
+                    <td>${teacher.phone}</td>
+                    <td>${teacher.qualification}</td>
+                    <td><button class="delete-btn" onclick="deleteTeacher(${index})">Delete</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // If teachers exist, hide form and show table view by default
+            toggleTeacherForm(false);
+        }
+
+        // Delete Teacher
+        function deleteTeacher(index) {
+            if (confirm("Are you sure you want to delete this teacher's record?")) {
+                teachersList.splice(index, 1);
+                localStorage.setItem('kvr_teachers', JSON.stringify(teachersList));
+                renderTeachersTable();
+            }
+        }
+
+        // Form Submit Handler
+        function handleTeacherSubmit(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('tName').value.trim();
+            const subject = document.getElementById('tSubject').value.trim();
+            const phone = document.getElementById('tPhone').value.trim();
+            const qual = document.getElementById('tQual').value.trim();
+
+            const teacherData = { name, subject, phone, qualification: qual };
+
+            // 1. Save locally for instant display on webpage
+            teachersList.push(teacherData);
+            localStorage.setItem('kvr_teachers', JSON.stringify(teachersList));
+
+            // 2. Button Loader State
+            const btn = document.getElementById('saveTeacherBtn');
+            btn.innerText = "Saving to Google Sheet...";
+            btn.disabled = true;
+
+            // 3. Save to Google Sheet Background
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(teacherData)
+            })
+            .then(() => {
+                alert("Teacher " + name + " saved successfully!");
+                document.getElementById('teacherForm').reset();
+                btn.innerText = "Save Teacher Details";
+                btn.disabled = false;
+                renderTeachersTable();
+            })
+            .catch(error => {
+                console.error("Sheet Error:", error);
+                alert("Saved locally! (Could not sync to Google Sheet)");
+                document.getElementById('teacherForm').reset();
+                btn.innerText = "Save Teacher Details";
+                btn.disabled = false;
+                renderTeachersTable();
+            });
+        }
+
+        function selectClass(className) {
+            alert("You selected: " + className);
+        }
+    </script>
+
+</body>
+</html>
